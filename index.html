@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>
+    TrafficGamer
+  </title>
+  <link rel="icon" href="icon.ico">
+  <style>
+    .gif-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .gif-grid img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+  <section class="section">
+
+  <div class="container has-text-centered">
+    <!-- paper title -->
+    <p class="title is-3"> TrafficGamer: Reliable and Flexible Traffic Simulation for Safety-Critical Scenarios with Game-Theoretic Oracles </p>
+    <!-- publication -->
+    <!-- <p class="subtitle is-4"> ICLR 2024 (Oral) </p> -->
+    <!-- authors -->
+    <!-- <p class="title is-5 mt-2"> 
+      <a href="https://me.kiui.moe/" target="_blank">Jiaxiang Tang</a><sup>1</sup>, 
+      <a href="https://jiawei-ren.github.io/" target="_blank">Jiawei Ren</a><sup>2</sup>, 
+      <a href="https://hangz-nju-cuhk.github.io/" target="_blank">Hang Zhou</a><sup>3</sup>, 
+      <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a><sup>2</sup>,
+      <a href="http://www.cis.pku.edu.cn/info/1177/1378.htm" target="_blank">Gang Zeng</a><sup>1</sup>
+    </p> -->
+    <!-- affiliations -->
+    <!-- <p class="subtitle is-5"> 
+      <sup>1</sup> Peking University &nbsp;
+      <sup>2</sup> S-Lab, Nanyang Technological University &nbsp;
+      <sup>3</sup> Baidu &nbsp;
+    </p> -->
+
+    <!-- other links -->
+    <!-- <div class="is-flex is-justify-content-center">
+      <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://arxiv.org/abs/2309.16653" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
+      </span>
+      <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://github.com/dreamgaussian/dreamgaussian" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
+      </span>
+    </div> -->
+   
+  </div>
+
+  <!-- main container -->
+  <div class="container is-max-desktop has-text-centered">
+
+    <!-- abstract -->
+    <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
+    <p class="content is-size-6 has-text-left">
+      While modern Autonomous Vehicle (AV) systems can develop reliable driving policies under regular traffic conditions, they frequently struggle with safety-critical traffic scenarios. This difficulty primarily arises from the rarity of such scenarios in driving datasets and the complexities associated with predictive modeling among multiple vehicles. 
+      To support the testing and refinement of AV policies, simulating safety-critical traffic events is an essential challenge to be addressed.
+      In this work, we introduce <b>TrafficGamer</b>, which facilitates game-theoretic traffic simulation by viewing common road driving as a multi-agent game.
+      In evaluating the empirical performance across various real-world datasets, TrafficGamer ensures both \textit{fidelity} and \textit{exploitability} of the simulated scenarios, guaranteeing that they not only statically align with real-world traffic distribution but also efficiently capture equilibriums for representing safety-critical scenarios involving multiple agents.
+      Additionally, the results demonstrate that TrafficGamer exhibits highly {\it flexible} simulation across various contexts. Specifically, we demonstrate that by configuring risk-sensitive constraints during optimization, the generated scenarios can dynamically adapt to equilibriums of varying tightness.
+      To the best of our knowledge, TrafficGamer is the first simulator capable of generating diverse traffic scenarios involving multiple agents.
+    </p>
+    
+    <!-- results (videos) -->
+    <p class="title is-3 mt-5 has-text-centered"> Argoverse 2 (2D Visualization)</p>
+
+    <p class="content has-text-centered is-size-5">
+      Scenario 1
+    </p>
+    <p class="content has-text-centered is-size-5">
+      From bottom to top, the constraint is more tight; From left to right, the risk confidence value is increasing.
+    </p>
+    <div class="level">
+      <div class="gif-grid">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_123-quantile8.gif" alt="GIF 1">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_666-quantile32.gif" alt="GIF 2">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_123-quantile56.gif" alt="GIF 3">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile8.gif" alt="GIF 4">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile32.gif" alt="GIF 5">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile56.gif" alt="GIF 6">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile8.gif" alt="GIF 7">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile32.gif" alt="GIF 8">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile56.gif" alt="GIF 9">
+    </div>
+    </div>
+
+    <div class="level">
+      <div class="gif-grid">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_123-quantile8.gif" alt="GIF 1">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_666-quantile32.gif" alt="GIF 2">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_2.0-seed_123-quantile56.gif" alt="GIF 3">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile8.gif" alt="GIF 4">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile32.gif" alt="GIF 5">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_3.0-seed_123-quantile56.gif" alt="GIF 6">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile8.gif" alt="GIF 7">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile32.gif" alt="GIF 8">
+        <img src="av2_scenario/scenario1/scenario-1-piv_1.0-dl_5.0-seed_123-quantile56.gif" alt="GIF 9">
+    </div>
+    </div>
+    <!-- <video muted autoplay controls loop> <source src="videos/accelerate.mp4" type="video/mp4"> </video>
+
+
+    <p class="title is-3 mt-5 has-text-centered"> Image-to-3D </p>
+    <video muted autoplay loop> <source src="videos/image1.mp4" type="video/mp4"> </video>
+    <video muted autoplay loop> <source src="videos/image2.mp4" type="video/mp4"> </video>
+
+    <p class="content has-text-centered is-size-5">
+      We can support images with a non-zero elevation angle too!
+    </p>
+
+    <video muted autoplay loop> <source src="videos/elevation.mp4" type="video/mp4"> </video>
+    
+    <p class="title is-3 mt-5 has-text-centered"> Text-to-3D </p>
+    <video muted autoplay loop> <source src="videos/text.mp4" type="video/mp4"> </video>
+
+    <p class="title is-3 mt-5 has-text-centered"> Text-to-image-to-3D </p>
+    <video muted autoplay loop> <source src="videos/text-to-image-to-3d.mp4" type="video/mp4"> </video>
+
+    <p class="title is-3 mt-5 has-text-centered"> Optimization Progress </p>
+    <table class="table">
+      <tbody>
+        <tr> 
+          <th> <video muted controls autoplay loop> <source src="videos/gui.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="videos/gui2.mp4" type="video/mp4"> </video> </th>
+        </tr>
+        <tr>
+          <th class="has-text-centered"> Stage 1 (Generative Gaussian Splatting) </th>
+          <th class="has-text-centered"> Stage 2 (Mesh Texture Refinement) </th>
+        </tr>
+    </table>
+    <p class="content has-text-centered is-size-5">
+      Videos are played at the original speed and recorded on an NVIDIA 3070 (8GB).
+    </p>
+
+    <p class="title is-3 mt-5 has-text-centered"> Exported Meshes </p>
+    <div class="level">
+      <div class="level-item">
+        <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+    </div>
+
+
+    <div class="card mt-4">
+      <header class="card-header">
+        <p class="card-header-title"> Citation </p>
+      </header>
+      <div class="card-content is-size-5 has-text-left">
+<pre><code>@article{tang2023dreamgaussian,
+  title={DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation},
+  author={Tang, Jiaxiang and Ren, Jiawei and Zhou, Hang and Liu, Ziwei and Zeng, Gang},
+  journal={arXiv preprint arXiv:2309.16653},
+  year={2023}
+}</code></pre>
+      </div>
+    </div> -->
+  </div>
+
+
+  </section>
+</body>
+</html>
